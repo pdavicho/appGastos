@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import sqlite3
 from datetime import datetime
 
+
 # Configuración de la página
 st.set_page_config(page_title="Gestor de Finanzas Personales", page_icon="💰", layout="wide")
 
@@ -33,8 +34,18 @@ def obtener_transacciones(tipo, mes, año):
     return df
 
 # Categorías predefinidas
-CATEGORIAS_GASTOS = ['Comida', 'Gasolina', 'Salud', 'Casa', 'Restaurante', 'Deportes']
-CATEGORIAS_INGRESOS = ['Sueldo', 'Bonificación', 'Inversiones']
+CATEGORIAS_GASTOS = ['Comida', 'Gasolina', 'Salud', 'Casa', 'Restaurante', 'Deportes','Tarjeta', 'Otros']
+#CATEGORIAS_GASTOS = st_tags(label='Escoger las palabras que desea analizar :',
+#                           text='Presionar enter o anadir mas',
+#                           value=['Comida', 'Gasolina', 'Salud', 'Casa', 'Restaurante', 'Deportes'],
+#                           maxtags=8,
+#                           key="opciones_gastos")
+CATEGORIAS_INGRESOS = ['Sueldo', 'Bonificación', 'Inversiones', 'Otros']
+#CATEGORIAS_INGRESOS = st_tags(label='Escoger las palabras que desea analizar :',
+#                           text='Presionar enter o anadir mas',
+#                           value=['Sueldo', 'Bonificación', 'Inversiones'],
+#                           maxtags=8,
+#                           key="opciones_ingresos")
 
 # Inicialización de la base de datos
 crear_tablas()
